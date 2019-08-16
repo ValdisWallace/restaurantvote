@@ -11,7 +11,7 @@ public class Restaurant extends AbstractBaseEntity {
     @Column(name = "votes", nullable = false, columnDefinition = "int default 0")
     private int votes;
 
-    @OneToMany(fetch = FetchType.LAZY)
+    @OneToMany(fetch = FetchType.EAGER, mappedBy = "restaurant")
     private List<Dish> lunchMenu;
 
     public Restaurant() {
