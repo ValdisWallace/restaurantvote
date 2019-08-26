@@ -1,12 +1,10 @@
 package ru.restaurantvote.model;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.FetchType;
-import javax.persistence.OneToMany;
+import javax.persistence.*;
 import java.util.List;
 
-@Entity(name = "restaurants")
+@Entity
+@Table(name = "restaurants", uniqueConstraints = {@UniqueConstraint(columnNames = "name", name = "restaurants_unique_name_idx")})
 public class Restaurant extends AbstractBaseEntity {
     @Column(name = "votes", nullable = false, columnDefinition = "int default 0")
     private int votes;

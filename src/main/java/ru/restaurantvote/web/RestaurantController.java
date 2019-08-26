@@ -1,4 +1,4 @@
-package ru.restaurantvote.web.restaurant;
+package ru.restaurantvote.web;
 
 import org.springframework.http.MediaType;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -7,19 +7,20 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 import ru.restaurantvote.model.Restaurant;
 import ru.restaurantvote.repository.RestaurantRepository;
+import ru.restaurantvote.service.RestaurantService;
 
 import java.util.List;
 
 @RestController
-@RequestMapping(value = "/restaurants", produces = MediaType.APPLICATION_JSON_VALUE)
+@RequestMapping(value = RestaurantController.REST_URL, produces = MediaType.APPLICATION_JSON_VALUE)
 public class RestaurantController {
+    static final String REST_URL = "/rest/restaurants";
 
     @Autowired
-    private RestaurantRepository restaurantRepository;
+    private RestaurantService restaurantService;
 
     @GetMapping
     public List<Restaurant> getAll() {
-        List<Restaurant> restaurants =  restaurantRepository.findAll();
-        return restaurants;
+        return restaurantService.getAll();
     }
 }

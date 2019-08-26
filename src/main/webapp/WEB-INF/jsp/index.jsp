@@ -1,6 +1,6 @@
 <html>
 <body>
 <h2>Hello World!</h2>
-<a href="restaurants.jsp">restaurants</a>
+<a href="/rest/restaurants" methods="GET">restaurants</a>
 </body>
 </html>

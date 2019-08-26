@@ -10,6 +10,7 @@ import java.util.List;
 
 @Repository
 public interface DishRepository extends JpaRepository<Dish, Integer> {
+
     @Query("SELECT d FROM Dish d WHERE d.restaurant.id=:restId")
     List<Dish> getAll(@Param("restId") int restId);
 }
