@@ -2,6 +2,7 @@ package ru.restaurantvote.model;
 
 import org.hibernate.Hibernate;
 import org.springframework.data.domain.Persistable;
+import org.springframework.util.Assert;
 
 import javax.persistence.*;
 import javax.validation.constraints.NotBlank;
@@ -33,6 +34,12 @@ public abstract class AbstractBaseEntity implements Persistable<Integer> {
     @Override
     public Integer getId() {
         return id;
+    }
+
+    // doesn't work for hibernate lazy proxy
+    public int id() {
+        Assert.notNull(getId(), "Entity must has id");
+        return getId();
     }
 
     @Override
