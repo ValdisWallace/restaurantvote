@@ -6,7 +6,6 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 import ru.restaurantvote.model.Restaurant;
-import ru.restaurantvote.repository.RestaurantRepository;
 import ru.restaurantvote.service.RestaurantService;
 
 import java.util.List;
