@@ -7,10 +7,11 @@ import org.springframework.util.Assert;
 import javax.persistence.*;
 import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.Size;
+import java.io.Serializable;
 
 @MappedSuperclass
 @Access(AccessType.FIELD)
-public abstract class AbstractBaseEntity implements Persistable<Integer> {
+public abstract class AbstractBaseEntity implements Persistable<Integer>, Serializable {
     public static final int START_SEQ = 100000;
 
     @Id

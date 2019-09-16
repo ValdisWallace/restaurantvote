@@ -15,6 +15,8 @@ import javax.annotation.PostConstruct;
     "classpath:spring/spring-mvc.xml"
 })
 abstract public class AbstractControllerTest {
+    public static final String REST_URL = "/rest/restaurants";
+
     private static final CharacterEncodingFilter CHARACTER_ENCODING_FILTER = new CharacterEncodingFilter();
 
     static {

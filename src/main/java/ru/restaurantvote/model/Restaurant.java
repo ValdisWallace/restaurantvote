@@ -1,6 +1,6 @@
 package ru.restaurantvote.model;
 
-import com.fasterxml.jackson.annotation.JsonManagedReference;
+import com.fasterxml.jackson.annotation.*;
 
 import javax.persistence.*;
 import java.util.List;
@@ -12,7 +12,6 @@ public class Restaurant extends AbstractBaseEntity {
     private int votes;
 
     @OneToMany(fetch = FetchType.EAGER, mappedBy = "restaurant")
-    @JsonManagedReference
     private List<Dish> lunchMenu;
 
     public Restaurant() {
